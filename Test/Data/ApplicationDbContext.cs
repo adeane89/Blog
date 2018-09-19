@@ -10,6 +10,9 @@ namespace Test.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<BlogPosts> BlogPosts { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -18,9 +21,10 @@ namespace Test.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
+            builder.Entity<Category>().HasKey(x => x.Name);
+            builder.Entity<Category>().Property(x => x.DateCreated).HasDefaultValueSql("GetDate()");
+            builder.Entity<Category>().Property(x => x.DateLastModified).HasDefaultValueSql("GetDate()");
+            builder.Entity<Category>().Property(x => x.Name).HasMaxLength(100);
         }
     }
 }

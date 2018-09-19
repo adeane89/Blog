@@ -1,0 +1,26 @@
+﻿@model BlogPosts
+
+@{
+    ViewData["Title"] = "Posts";
+}
+
+<div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+            <h3>@Model.Title</h3>
+            <h5>@Model.CategoryName</h5>
+        </div>
+
+        <div class="w3-justify">
+            <img src="@Model.ImagePath" class="w3-round w3-image" width="300" height="200" />
+            <p>
+                @Model.Content
+            </p>
+            <p class="w3-left"><button class="w3-button w3-white w3-border" onclick="likeFunction(this)"><b><i class="fa fa-thumbs-up"></i> Like</b></button></p>
+            <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
+            <p class="w3-clear"></p>
+            <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+                <hr>
+            </div>
+            <span class="w3-opacity">@Model.DateCreated</span>
+        </div>
+</div>
