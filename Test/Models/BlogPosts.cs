@@ -12,6 +12,7 @@ namespace Test.Models
         public string Content { get; set; }
         public string CategoryName { get; set; }
         public string ImagePath { get; set; }
+        public string PostCreated { get; set; }
         public DateTime? DateCreated { get; set; }
         public DateTime? DateLastModified { get; set; }
     }

@@ -1,1 +1,68 @@
-﻿
+﻿@model IEnumerable<BlogPosts>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="w3-content" style="max-width:1600px">
+
+    <!-- Image header -->
+    <header class="w3-display-container w3-wide" id="home">
+        <img class="w3-image" src="~/images/ireland.jpeg" alt="Blog" width="1600" height="1060">
+        <div class="w3-display-right w3-padding-large">
+            <h5 class="w3-text-white"><b>THE ROAMIN PUP</b></h5>
+            <h6 class="w3-text-white w3-hide-small">Welcome to the blog of <span class="w3-tag">Aug Dog</span></h6>
+        </div>
+    </header>
+  
+    <!-- Grid -->
+    <div class="w3-row w3-padding w3-border">
+
+        <!-- About Us Blurb -->
+        <div class="w3-left w3-padding-large">
+            <p>
+                Chocolate cake chocolate cake gummi bears cookie dessert cake sweet roll tootsie roll.
+                Candy cookie gingerbread ice cream carrot cake. Cookie oat cake liquorice topping halvah
+                chupa chups wafer. Muffin donut bonbon marshmallow. Pie wafer candy canes macaroon chocolate
+                sugar plum pie. Brownie gingerbread carrot cake. Candy canes tootsie roll jelly beans pie.
+            </p>
+        </div>
+
+        <!-- Blog entries -->
+        <div class="w3-center">
+            <!-- Blog entry -->
+            <div class="w3-container w3-white w3-margin w3-padding-large">
+                @foreach (var post in Model)
+                {
+                    <div class="w3-margin w3-padding-large">
+                        <img src=@post.ImagePath alt=@post.Title width="300" height="200" class=" w3-right" style="padding-left: 5px;">
+                        <p class="w3-opacity w3-left-align">@post.PostCreated</p>
+                        <h3 class="w3-left-align">@post.Title</h3>
+                        <p class="w3-left-align">
+                            @if (post.Content.Length >= 300)
+                            {
+                                @(post.Content.Substring(0, 299) + "...".ToString())
+                            }
+                            else
+                            {
+                                @post.Content
+                            }
+                        </p>
+                        <br />
+                        <p class="w3-left"><b><a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID" class="w3-button w3-white w3-border">Read more...</a></b></p>
+                        <p class="w3-clear"></p>
+                    </div>
+                }
+            </div>
+            <!-- END BLOG ENTRIES -->
+            <a asp-controller="Blog" asp-action="Index" class="w3-button w3-black w3-padding-large w3-margin-bottom">To all posts</a>
+        </div>
+        <!-- END About/Intro Menu -->
+    </div>
+
+        <!-- END GRID -->
+</div>
+
+<script>
+    // Toggle between hiding and showing blog replies/comments
+
+</script>
