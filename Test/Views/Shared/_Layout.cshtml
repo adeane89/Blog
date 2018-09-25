@@ -5,53 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kavoon">
+    <link rel="stylesheet" href="~/css/site.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>@ViewData["Title"] - Test</title>
 </head>
-<body> 
-    <div class="w3-bar w3-justify" id="myNavbar" style="background-color: #a5a5af">
-        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-left" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-            <i class="fa fa-bars"></i>
-        </a>
-        <a class="w3-bar-item w3-button w3-hide-small" style="font-size: 10vh;">The Roamin' Pup</a>
-        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-center">The Roamin' Pup</a>
-        <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-snapchat"></i></a>
-        <a href="https://www.instagram.com/theroaminpup/" class="w3-bar-item w3-button w3-right"><i class="fa fa-instagram"></i></a>
-        <a asp-controller="Blog" asp-action="Index" class="w3-bar-item w3-button w3-right w3-hide-small">Pup Pics</a>
-        <a asp-controller="Blog" asp-action="Index" class="w3-bar-item w3-button w3-right w3-hide-small">About Us</a>
-        <a asp-controller="Blog" asp-action="Index" class="w3-bar-item w3-button w3-right w3-hide-small">Archive</a>
-        <a asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button w3-right w3-hide-small">Home</a>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="navbar-brand w3-hide-small w3-hide-medium" src="~/images/LogoMakr_0xdPGp.png" width="120" height="120" />
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand w3-hide-small w3-hide-medium" style="line-height: 10vh; font-size: 9vh; font-family: 'Amatic SC', cursive;">The Roamin' Pup</a>
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand w3-hide-large" style="line-height: 4vh; font-size: 4vh; font-family: 'Amatic SC', cursive;" margin="0">
+                <img class="navbar-brand w3-hide-large" src="~/images/LogoMakr_0xdPGp.png" width="40" height="40" style="margin-right: 3px;" />The Roamin' Pup
+            </a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                    </li>
+                </ul>
+                <div class="form-inline my-2 my-lg-0">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a asp-controller="Blog" asp-action="Index" class="nav-link">Blog</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a asp-controller="Home" asp-action="About" class="nav-link">About Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a asp-controller="Blog" asp-action="Photos" class="nav-link">Pup Pics</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a href="https://www.instagram.com/theroaminpup/" class="nav-link"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    </div>
-
-    <!-- Navbar on small screens -->
-    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-        <a asp-controller="Home" asp-action="Index" class="w3-bar-item w3-button">Home</a>
-        <a asp-controller="Blog" asp-action="Index" class="w3-bar-item w3-button">Archive</a>
-        <a asp-controller="Blog" asp-action="Index" class="w3-bar-item w3-button">About Us</a>
-        <a asp-controller="Blog" asp-action="Index" class="w3-bar-item w3-button">Pup Pics</a>
-    </div>
-
-    <script>
-        function toggleFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-    </script>
-    <div>
-        @RenderBody()
-    </div>
-    <footer class="w3-container w3-dark-grey w3-center w3-hide-medium w3-hide-small" style="padding:32px">
-        <p>&copy; 2018 - The Roamin Pup</p>
-    </footer>
-    @RenderSection("Scripts", required: false)
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <div id="main" class="container">
+            @RenderBody()
+        </div>
+        </div>
+        <footer class="w3-container w3-center w3-hide-medium w3-hide-small" style="padding:32px">
+            <p>&copy; 2018 - The Roamin Pup</p>
+        </footer>
+        @RenderSection("Scripts", required: false)
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

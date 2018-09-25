@@ -3,19 +3,27 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="w3-content" style="max-width:1600px">
-
+<div class="w3-content" style="max-width:1600px;">
     <!-- Image header -->
-    <header class="w3-display-container w3-wide" id="home">
-        <img class="w3-image" src="~/images/ireland.jpeg" alt="Blog" width="1600" height="1060">
-        <div class="w3-display-right w3-padding-large">
-            <h5 class="w3-text-white"><b>THE ROAMIN PUP</b></h5>
-            <h6 class="w3-text-white w3-hide-small">Welcome to the blog of <span class="w3-tag">Aug Dog</span></h6>
+    <header class="w3-display-container w3-wide pngcontainer1">
+        <div style="position:relative">
+            <div>
+                <img class="w3-image" src="~/images/ireland.jpeg">
+            </div>
+            <div style="position:absolute; left:0; top:0;">
+            </div>
+            @*<div style="position:absolute; right:5vw; top:8vh;">
+                <img class="w3-image w3-hide-small w3-hide-medium" width="300" height="200" src="~/images/logo.png">
+            </div>
+            <div style="position:absolute; right:3vw; top:2vh;">
+                <img class="w3-image w3-hide-large" width="90" height="60" src="~/images/logo.png">
+            </div>*@
         </div>
     </header>
-  
+
+
     <!-- Grid -->
-    <div class="w3-row w3-padding w3-border">
+    <div class="w3-row w3-padding">
 
         <!-- About Us Blurb -->
         <div class="w3-left w3-padding-large">
@@ -30,10 +38,10 @@
         <!-- Blog entries -->
         <div class="w3-center">
             <!-- Blog entry -->
-            <div class="w3-container w3-white w3-margin w3-padding-large">
+            <div class="w3-container w3-margin w3-padding-large">
                 @foreach (var post in Model)
                 {
-                    <div class="w3-margin w3-padding-large">
+                    <div class="w3-margin w3-padding-large"  style="background-color: #eae3ea;">
                         <img src=@post.ImagePath alt=@post.Title width="300" height="200" class=" w3-right" style="padding-left: 5px;">
                         <p class="w3-opacity w3-left-align">@post.PostCreated</p>
                         <h3 class="w3-left-align">@post.Title</h3>
@@ -58,11 +66,9 @@
         </div>
         <!-- END About/Intro Menu -->
     </div>
-
-        <!-- END GRID -->
+    <!-- END GRID -->
 </div>
 
 <script>
     // Toggle between hiding and showing blog replies/comments
-
 </script>

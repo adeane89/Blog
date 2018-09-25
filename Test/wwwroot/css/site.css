@@ -1,7 +1,28 @@
-﻿h1, h2, h3, h4, h5, h6 {
-    font-family: 'Kavoon', cursive;
+﻿@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+@font-face {
+    font-family: 'Amatic SC', cursive;
 }
 
-body {
-    font-family: 'Kavoon', cursive;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+body, html {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #B4dbc0;
+    height: 100%;
+}
+
+#main {
+    padding: 10px;
+    background-color: #a7b3a5;
+}
+
+.navbar {
+    background-color: #b56357;
+}
+
+footer {
+    background-color: #b56357;
 }
