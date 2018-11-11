@@ -54,7 +54,7 @@ namespace Test.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Photos (int? id)
+        public IActionResult Photos(int? id)
         {
             return View();
         }

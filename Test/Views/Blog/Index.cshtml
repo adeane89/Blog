@@ -4,52 +4,53 @@
     ViewData["Title"] = "Blog";
 }
 
-<div class="w3-content" style="max-width:1600px">
+<div class="w3-content" style="max-width:1600px;">
     <!-- Grid -->
-    <div class="w3-row w3-padding w3-border">
-
+    <div class="w3-row w3-padding">
         <!-- Blog entries -->
         <div class="w3-col l8 s12">
-
             <!-- Blog entry -->
-            <div class="w3-container w3-white w3-margin w3-padding-large">
+            <div class="w3-container">
                 @foreach (var post in Model)
                 {
-                <div class="w3-center">
-                    <h3>@post.Title</h3>
-                    <span class="w3-opacity">@post.PostCreated</span>
-                </div>
+                    <div class="blog w3-margin w3-padding">
+                        <div class="w3-center">
+                            <h3>@post.Title</h3>
+                            <span class="w3-opacity">@post.PostCreated</span>
+                        </div>
 
-                    <div class="w3-justify">
-                        <img src=@post.ImagePath alt=@post.Title style="width:100%" class="w3-padding-16">
-                        <p class="w3-left-align">
-                            @if (post.Content.Length >= 200)
-                            {
-                                @(post.Content.Substring(0, 199) + "...".ToString())
-                            }
-                            else
-                            {
-                                @post.Content
-                            }
-                        </p>
-                        <br />
-                        <p class="w3-left"><b><a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID" class="w3-button w3-white w3-border">Continue reading...</a></b></p>
-                        <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Comments  </b> <span class="w3-tag w3-white"></span></button></p>
-                        <p class="w3-clear"></p>
-                        <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
-                            <hr>
-                            <div class="w3-col l2 m3">
+                        <div class="w3-justify">
+                            <img src=@post.ImagePath alt=@post.Title style="width:100%" class="w3-padding-16">
+                            <p class="w3-left-align">
+                                @if (post.Content.Length >= 200)
+                                {
+                                    @(post.Content.Substring(0, 199) + "...".ToString())
+                                }
+                                else
+                                {
+                                    @post.Content
+                                }
+                            </p>
+                            <br />
+                            <p class="w3-left"><b><a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID" class="w3-button w3-white w3-border">Continue reading...</a></b></p>
+                            <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo1')" id="myBtn"><b>Comments  </b> <span class="w3-tag w3-white"></span></button></p>
+                            <p class="w3-clear"></p>
+                            <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+
+                                <div class="w3-col l2 m3">
+                                </div>
                             </div>
                         </div>
                     </div>
                 }
+
             </div>
+            <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom w3-center"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
             <!-- END BLOG ENTRIES -->
         </div>
 
         <!-- Post menu -->
         <div class="w3-col l4">
-            
             <!-- Posts -->
             <div class="w3-white w3-margin">
                 <div class="w3-container w3-padding w3-black">
@@ -65,7 +66,6 @@
                          }
                     </ul>
             </div>
-            <hr>
             <!-- END About/Intro Menu -->
         </div>
 
@@ -87,11 +87,6 @@
         </div>
     </div>
 </div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey" style="padding:32px">
-    <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-</footer>
 
 <script>
 // Toggle between hiding and showing blog replies/comments

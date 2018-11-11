@@ -8,21 +8,29 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Rajdhani', sans-serif;
 }
 
+/*background color*/
 body, html {
     font-family: 'Rajdhani', sans-serif;
-    background-color: #B4dbc0;
+    background-color: #00303F;
     height: 100%;
 }
 
+/*inside background color*/
 #main {
     padding: 10px;
-    background-color: #a7b3a5;
+    background-color: #7A9D96;
 }
 
+/*header*/
 .navbar {
-    background-color: #b56357;
+    background-color: #DCAE1D;
 }
 
 footer {
-    background-color: #b56357;
+    background-color: #DCAE1D;
+}
+
+/*blog boxes*/
+.blog {
+    background-color: #CAE4DB;
 }

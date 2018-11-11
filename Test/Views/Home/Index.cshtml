@@ -28,21 +28,19 @@
         <!-- About Us Blurb -->
         <div class="w3-left w3-padding-large">
             <p>
-                Chocolate cake chocolate cake gummi bears cookie dessert cake sweet roll tootsie roll.
-                Candy cookie gingerbread ice cream carrot cake. Cookie oat cake liquorice topping halvah
-                chupa chups wafer. Muffin donut bonbon marshmallow. Pie wafer candy canes macaroon chocolate
-                sugar plum pie. Brownie gingerbread carrot cake. Candy canes tootsie roll jelly beans pie.
+                Stepping out of our comfort zone to follow our dream of road tripping across the country in an RV while
+                still maintaining full time jobs.
             </p>
         </div>
 
         <!-- Blog entries -->
         <div class="w3-center">
             <!-- Blog entry -->
-            <div class="w3-container w3-margin w3-padding-large">
+            <div class="w3-container">
                 @foreach (var post in Model)
                 {
-                    <div class="w3-margin w3-padding-large"  style="background-color: #eae3ea;">
-                        <img src=@post.ImagePath alt=@post.Title width="300" height="200" class=" w3-right" style="padding-left: 5px;">
+                    <div class="blog w3-margin w3-padding-large">
+                        <img src=@post.ImagePath alt=@post.Title width="300" height="200" class="w3-image w3-right" style="padding-left: 5px;">
                         <p class="w3-opacity w3-left-align">@post.PostCreated</p>
                         <h3 class="w3-left-align">@post.Title</h3>
                         <p class="w3-left-align">

@@ -17,10 +17,10 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <img class="navbar-brand w3-hide-small w3-hide-medium" src="~/images/LogoMakr_0xdPGp.png" width="120" height="120" />
+            <img class="navbar-brand w3-hide-small w3-hide-medium" src="~/images/daklogo.png" width="120" height="120" />
             <a asp-controller="Home" asp-action="Index" class="navbar-brand w3-hide-small w3-hide-medium" style="line-height: 10vh; font-size: 9vh; font-family: 'Amatic SC', cursive;">The Roamin' Pup</a>
             <a asp-controller="Home" asp-action="Index" class="navbar-brand w3-hide-large" style="line-height: 4vh; font-size: 4vh; font-family: 'Amatic SC', cursive;" margin="0">
-                <img class="navbar-brand w3-hide-large" src="~/images/LogoMakr_0xdPGp.png" width="40" height="40" style="margin-right: 3px;" />The Roamin' Pup
+                <img class="navbar-brand w3-hide-large" src="~/images/daklogo.png" width="40" height="40" style="margin-right: 3px;" />The Roamin' Pup
             </a>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -59,11 +59,10 @@
 
         <div id="main" class="container">
             @RenderBody()
+
+            <p class="w3-center">&copy; 2018 - The Roamin Pup</p>
         </div>
-        </div>
-        <footer class="w3-container w3-center w3-hide-medium w3-hide-small" style="padding:32px">
-            <p>&copy; 2018 - The Roamin Pup</p>
-        </footer>
+    </div>
         @RenderSection("Scripts", required: false)
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
