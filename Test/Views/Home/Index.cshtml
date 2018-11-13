@@ -8,7 +8,7 @@
     <header class="w3-display-container w3-wide pngcontainer1">
         <div style="position:relative">
             <div>
-                <img class="w3-image" src="~/images/ireland.jpeg">
+                <img class="w3-image" src="~/images/homepage.jpg">
             </div>
             <div style="position:absolute; left:0; top:0;">
             </div>
@@ -23,13 +23,12 @@
 
 
     <!-- Grid -->
-    <div class="w3-row w3-padding">
+    <div class="w3-row">
 
         <!-- About Us Blurb -->
         <div class="w3-left w3-padding-large">
             <p>
-                Stepping out of our comfort zone to follow our dream of road tripping across the country in an RV while
-                still maintaining full time jobs.
+                Two people and a pup planning to travel the States
             </p>
         </div>
 
@@ -39,24 +38,23 @@
             <div class="w3-container">
                 @foreach (var post in Model)
                 {
-                    <div class="blog w3-margin w3-padding-large">
-                        <img src=@post.ImagePath alt=@post.Title width="300" height="200" class="w3-image w3-right" style="padding-left: 5px;">
-                        <p class="w3-opacity w3-left-align">@post.PostCreated</p>
-                        <h3 class="w3-left-align">@post.Title</h3>
-                        <p class="w3-left-align">
-                            @if (post.Content.Length >= 300)
-                            {
-                                @(post.Content.Substring(0, 299) + "...".ToString())
-                            }
-                            else
-                            {
-                                @post.Content
-                            }
-                        </p>
-                        <br />
-                        <p class="w3-left"><b><a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID" class="w3-button w3-white w3-border">Read more...</a></b></p>
-                        <p class="w3-clear"></p>
-                    </div>
+                <div class="blog w3-margin w3-padding">
+                    <a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID"><img src=@post.ImagePath alt=@post.Title width="300" height="200" class="w3-image w3-right w3-margin w3-padding"></a>
+                    <p class="w3-opacity w3-left-align">@post.PostCreated</p>
+                    <h3 class="w3-left-align"><strong>@post.Title</strong></h3> <p class="w3-left-align">
+                        @if (post.Content.Length >= 300)
+                        {
+                            @(post.Content.Substring(0, 299) + "...".ToString())
+                        }
+                        else
+                        {
+                            @post.Content
+                        }
+                    </p>
+                    <br />
+                    <p class="w3-left"><b><a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID" class="w3-button w3-white w3-border">Read more...</a></b></p>
+                    <p class="w3-clear"></p>
+                </div>
                 }
             </div>
             <!-- END BLOG ENTRIES -->

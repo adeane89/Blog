@@ -6,7 +6,7 @@
 
 <div class="w3-content" style="max-width:1600px;">
     <!-- Grid -->
-    <div class="w3-row w3-padding">
+    <div class="w3-row">
         <!-- Blog entries -->
         <div class="w3-col l8 s12">
             <!-- Blog entry -->
@@ -15,12 +15,12 @@
                 {
                     <div class="blog w3-margin w3-padding">
                         <div class="w3-center">
-                            <h3>@post.Title</h3>
+                            <h3><strong>@post.Title</strong></h3>
                             <span class="w3-opacity">@post.PostCreated</span>
                         </div>
 
                         <div class="w3-justify">
-                            <img src=@post.ImagePath alt=@post.Title style="width:100%" class="w3-padding-16">
+                            <a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID"><img src=@post.ImagePath alt=@post.Title style="width:100%" class="w3-padding-16"></a>
                             <p class="w3-left-align">
                                 @if (post.Content.Length >= 200)
                                 {
@@ -45,7 +45,6 @@
                 }
 
             </div>
-            <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom w3-center"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
             <!-- END BLOG ENTRIES -->
         </div>
 
@@ -53,29 +52,31 @@
         <div class="w3-col l4">
             <!-- Posts -->
             <div class="w3-white w3-margin">
-                <div class="w3-container w3-padding w3-black">
+                <div class="w3-container w3-padding w3-center" style="background-color: #00303F; color: white">
                     <h4>Blog Posts</h4>
                 </div>
-                    <ul class="w3-ul w3-hoverable w3-white">
-                        @foreach (var post in Model)
-                        {
-                            <li class="w3-padding-16">
-                                        <a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID">@post.Title</a>
-                                        <p>@post.PostCreated</p>
-                            </li>
-                         }
-                    </ul>
+                <ul class="w3-ul w3-hoverable" style="background-color: #CAE4DB;">
+                    @foreach (var post in Model)
+                    {
+                        <li class="w3-padding-16" style=" border: 1px solid white">
+                            <a asp-controller="Blog" asp-action="Details" asp-route-id="@post.ID"><strong>@post.Title</strong></a>
+                            <p>@post.PostCreated</p>
+                        </li>
+                    }
+                </ul>
             </div>
             <!-- END About/Intro Menu -->
         </div>
 
         <!-- END GRID -->
     </div>
-
     <!-- END w3-content -->
 </div>
+<div class="w3-center w3-margin w3-padding">
+    <a href="#" class="w3-button w3-black w3-padding-large"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+</div>
 
-<!-- Subscribe Modal -->
+ @*Subscribe Modal 
 <div id="subscribe" class="w3-modal w3-animate-opacity">
     <div class="w3-modal-content" style="padding:32px">
         <div class="w3-container w3-white">
@@ -86,7 +87,7 @@
             <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
         </div>
     </div>
-</div>
+</div>*@
 
 <script>
 // Toggle between hiding and showing blog replies/comments
