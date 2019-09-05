@@ -15,7 +15,7 @@ namespace Test.Models
         public List<string> Tags { get; set; }
 
         // Time based properties  
-        public DateTime CreateTime { get; set; }
+        //public DateTime CreateTime { get; set; }
 
         // Other properties and settings may include UserID, RoleID etc.  
     }
